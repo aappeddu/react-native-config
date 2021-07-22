@@ -85,11 +85,12 @@ tasks.whenTaskAdded { task ->
                         def variantConfigString = variant.getName()
                         if (envConfigName.contains(variantConfigString.toLowerCase())) {
                             loadDotEnv(envConfigName)
-                            project.env.each { k, v ->
+/*                            project.env.each { k, v ->
                                 def escaped = v.replaceAll("%","\\\\u0025")
                                 variant.buildConfigField "String", k, "\"$v\""
                                 variant.resValue "string", k, "\"$escaped\""
                             }
+                            */
                         }
                     }
                 }
